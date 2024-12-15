@@ -56,12 +56,11 @@ Diffusion models use a two-phase process:
 
 where \( \alpha_t \) controls the noise schedule.
 
-#### Reverse Process:
+2. **Reverse Process**:
 The reverse process approximates the denoising via:
 
 ![Reverse Process Equation](https://latex.codecogs.com/png.latex?p_\theta(x_{t-1}%20|%20x_t)%20=%20\mathcal{N}(x_{t-1};%20\mu_\theta(x_t,%20t),%20\Sigma_\theta(x_t,%20t))).
 
-2. **Reverse Process**:
    The reverse process approximates the denoising via:
    \[
    p_\theta(x_{t-1} | x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \Sigma_\theta(x_t, t)).
@@ -69,10 +68,10 @@ The reverse process approximates the denoising via:
 
 3. **Objective**:
    The model is trained to minimize the variational lower bound (VLB) of the data likelihood, commonly simplified to:
-   \[
-   \mathbb{E}_{q} \left[ \| \epsilon - \epsilon_\theta(x_t, t) \|^2 \right]
-   \]
-   where \( \epsilon \) is the noise added in the forward process.
+
+![Objective Equation](https://latex.codecogs.com/png.latex?\mathbb{E}_q%20\left[%20\|%20\epsilon%20-%20\epsilon_\theta(x_t,%20t)%20\|^2%20\right])
+
+where \( \epsilon \) is the noise added in the forward process.
 
 ---
 
