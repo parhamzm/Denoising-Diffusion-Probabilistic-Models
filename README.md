@@ -51,10 +51,15 @@ Diffusion models use a two-phase process:
 
 1. **Forward Process**:
    Given data \( x_0 \sim q(x_0) \), the forward process produces noisy data:
-   \[
-   q(x_t | x_{t-1}) = \mathcal{N}(x_t; \sqrt{\alpha_t} x_{t-1}, (1 - \alpha_t) \mathbf{I})
-   \]
-   where \( \alpha_t \) controls the noise schedule.
+
+![Forward Process Equation](https://latex.codecogs.com/png.latex?q(x_t%20|%20x_{t-1})%20=%20\mathcal{N}(x_t;%20\sqrt{\alpha_t}%20x_{t-1},%20(1%20-%20\alpha_t)%20\mathbf{I}))
+
+where \( \alpha_t \) controls the noise schedule.
+
+#### Reverse Process:
+The reverse process approximates the denoising via:
+
+![Reverse Process Equation](https://latex.codecogs.com/png.latex?p_\theta(x_{t-1}%20|%20x_t)%20=%20\mathcal{N}(x_{t-1};%20\mu_\theta(x_t,%20t),%20\Sigma_\theta(x_t,%20t))).
 
 2. **Reverse Process**:
    The reverse process approximates the denoising via:
